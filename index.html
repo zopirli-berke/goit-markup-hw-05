@@ -626,9 +626,12 @@
                 placeholder="E-mail"
               />
 
-              <button class="footer-button" type="submit">
-                <span class="button-text">Subscribe</span>
-              </button>
+              <input
+                class="footer-button-input"
+                type="submit"
+                value="Subscribe"
+              />
+
               <svg class="button-icon" width="24" height="20">
                 <use href="./images/icons.svg#icon-send"></use>
               </svg>
@@ -637,7 +640,7 @@
         </div>
       </footer>
     </div>
-    <div class="modal">
+    <div class="modal is-open">
       <div class="modal-content">
         <form class="modal-form">
           <div class="modal-form-icon-wrapper">
@@ -657,6 +660,7 @@
                 type="text"
                 id="name"
                 name="name"
+                placeholder="Name"
                 required
               />
               <svg class="form-icon" width="12" height="12">
@@ -670,6 +674,7 @@
                 type="text"
                 id="phone"
                 name="phone"
+                placeholder="Phone"
                 required
               />
               <svg class="form-icon" width="13" height="13">
@@ -683,6 +688,7 @@
                 type="email"
                 id="email"
                 name="email"
+                placeholder="E-mail"
                 required
               />
               <svg class="form-icon" width="15" height="12">
@@ -700,33 +706,26 @@
               ></textarea>
             </div>
           </div>
-
-          <div class="modal-form-checkbox-container">
-            <label class="modal-form-label">
-              <input
-                class="modal-form-checkbox visually-hidden"
-                type="checkbox"
-                name="terms"
-                id="terms"
-              />
-
-              <span class="modal-form-checkbox-wrapper">
-                <svg class="form-checkbox-icon">
-                  <use href="./images/icons.svg#icon-checkbox"></use>
-                </svg>
-              </span>
-
-              I accept the terms and conditions of the<a
+          <div class="checkbox-container">
+            <input
+              type="checkbox"
+              id="terms"
+              class="modal-form-input-checkbox"
+            />
+            <label for="terms" class="modal-form-label"
+              ><svg class="checkbox-icon">
+                <use href="./images/icons.svg#icon-checkbox"></use>
+              </svg>
+            </label>
+            <label for="terms" class="modal-form-label"
+              >I accept the terms and conditions of the<a
                 class="terms-link"
                 href="#"
                 >Privacy Policy</a
               >
             </label>
           </div>
-
-          <button class="modal-button" type="submit">
-            <span class="button-text">Send</span>
-          </button>
+          <input class="modal-button-input" type="submit" value="Send" />
         </form>
       </div>
     </div>

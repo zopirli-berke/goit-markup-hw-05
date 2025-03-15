@@ -98,12 +98,13 @@ h2 {
 }
 .button:hover,
 .button:focus,
-.footer-button:hover,
-.modal-button:hover,
-.modal-button:hover {
+.footer-button-input:hover,
+.modal-button-input:hover {
   background-color: #404bbf;
 }
-.button-text {
+.button-text,
+.modal-button-input,
+.footer-button-input {
   color: #ffffff;
   line-height: 1.5;
   font-size: 16px;
@@ -363,7 +364,7 @@ h2 {
   position: relative;
 }
 
-.footer-button {
+.footer-button-input {
   display: inline;
   padding: 8px 64px 8px 24px;
   background-color: #4d5ae5;
@@ -372,6 +373,7 @@ h2 {
   border-radius: 4px;
   color: #ffffff;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 
 .button-icon {
@@ -484,7 +486,8 @@ h2 {
 
 .form-label,
 .modal-form-textarea::placeholder,
-.modal-form-label {
+.modal-form-label,
+.modal-form-input::placeholder {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
@@ -512,8 +515,8 @@ h2 {
   fill: #4d5ae5;
 }
 
-.modal-form-input:focus,
-.modal-form-textarea:focus {
+.modal-form-input:focus-within,
+.modal-form-textarea:focus-within {
   border-color: #4d5ae5;
 }
 
@@ -522,37 +525,47 @@ h2 {
   color: #4d5ae5;
 }
 
+.checkbox-container,
 .modal-form-label {
   margin-top: 16px;
+  align-items: center;
   display: flex;
   gap: 8px;
 }
 
-.modal-form-checkbox-wrapper {
+.modal-form-input-checkbox {
+  display: none;
+}
+
+.modal-form-input-checkbox + .modal-form-label {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  cursor: pointer;
   width: 16px;
   height: 16px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 2px;
 }
 
-.form-checkbox-icon {
-  fill: transparent;
-}
-
-.modal-form-checkbox:checked + .modal-form-checkbox-wrapper {
+.modal-form-input-checkbox:checked + .modal-form-label {
   background-color: #4d5ae5;
   border-color: #4d5ae5;
 }
 
-.modal-form-checkbox:checked
-  + .modal-form-checkbox-wrapper
-  .form-checkbox-icon {
-  fill: #ffffff;
+.checkbox-icon {
+  fill: transparent;
 }
-.modal-button {
+
+.modal-form-input-checkbox + .modal-form-label .checkbox-icon {
+  display: flex;
+  position: absolute;
+  inset: 3px 2px;
+  width: 10px;
+  height: 8px;
+  fill: white;
+}
+
+.modal-button-input {
   width: 169px;
   height: 56px;
   padding: 16px 32px;
@@ -563,4 +576,9 @@ h2 {
   margin: 24px 95px;
   margin-bottom: 0;
   transition: background-color, 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
+
+/* .modal {
+  display: none;
+} */
