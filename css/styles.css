@@ -2,6 +2,11 @@ body {
   font-family: "Roboto", "Arial", "Helvetica", sans-serif;
   color: #2e2f42;
 }
+
+.modal {
+  display: none;
+}
+
 ul {
   list-style: none;
 }
@@ -563,8 +568,4 @@ h2 {
   margin-bottom: 0;
   transition: background-color, 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-}
-
-.modal {
-  display: none;
 }
